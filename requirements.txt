@@ -1,0 +1,20 @@
+# MediaPipe 1.0.x aborts on Apple Silicon when the hand landmarker starts (Metal service bug,
+# google-ai-edge/mediapipe#6356). 0.10.35 works. It also brings its own OpenCV
+# (opencv-contrib-python): don't add opencv-python on top, the two clash over `cv2`.
+mediapipe>=0.10.30,<1.0
+numpy
+psutil>=5.9
+pyobjc-framework-Quartz>=10.0
+pyobjc-framework-Cocoa>=10.0
+pyobjc-framework-ApplicationServices>=10.0
+pyobjc-framework-AVFoundation>=10.0   # camera / microphone permission status for the setup guide
+# Voice (all local)
+sounddevice>=0.4.6
+openwakeword>=0.6.0
+onnxruntime>=1.16
+faster-whisper>=1.0.0
+# Intent matching: fastembed runs MiniLM on ONNX Runtime (no PyTorch, used by the released app).
+fastembed>=0.3
+# PyTorch-based: gesture model training (nexus.train) and the intent-matching fallback. Dev only.
+sentence-transformers>=3.0
+pytest>=8.0

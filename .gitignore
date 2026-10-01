@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+models/*.task
+logs/
+# Release builds (scripts/build_release.sh): large, and rebuilt from source anytime
+dist/
+# Your own gesture recordings (hand landmark coordinates, no images) stay local by default.
+# The trained model (models/gesture.pt, ~200 KB) and results/ ARE committed: they back the numbers.
+data/
+# runs/ is committed on purpose: the CSVs back up measurements
